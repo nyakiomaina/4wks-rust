@@ -14,8 +14,7 @@ Our mini-tokio runtime implements cooperative scheduling through the following k
 
 Here's a sequence diagram showing how these components interact:
 
-```svg
-<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+<img src="data:image/svg+xml;utf8,<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
   <rect x="50" y="50" width="100" height="300" fill="#f0f0f0" stroke="#000"/>
   <text x="75" y="30" text-anchor="middle">Task</text>
   <rect x="250" y="50" width="100" height="300" fill="#f0f0f0" stroke="#000"/>
@@ -34,8 +33,7 @@ Here's a sequence diagram showing how these components interact:
 
   <line x1="450" y1="250" x2="250" y2="250" stroke="#000"/>
   <text x="350" y="240" text-anchor="middle">wake()</text>
-</svg>
-```
+</svg>" />
 
 ## Pin Explained
 
@@ -43,8 +41,7 @@ Here's a sequence diagram showing how these components interact:
 
 Here's a diagram showing how `Pin` works:
 
-```svg
-<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+<img src="data:image/svg+xml;utf8,<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
   <rect x="50" y="50" width="200" height="100" fill="#e0e0ff" stroke="#000"/>
   <text x="150" y="100" text-anchor="middle">Stack</text>
   <rect x="50" y="200" width="200" height="100" fill="#ffe0e0" stroke="#000"/>
@@ -61,8 +58,7 @@ Here's a diagram showing how `Pin` works:
   <line x1="400" y1="150" x2="400" y2="200" stroke="#000" marker-end="url(#arrow)"/>
   <text x="420" y="175" text-anchor="start">Box&lt;Future&gt;</text>
   <text x="420" y="195" text-anchor="start">(can move)</text>
-</svg>
-```
+</svg>" />
 
 ## Poll Contract and Waker Callbacks
 
