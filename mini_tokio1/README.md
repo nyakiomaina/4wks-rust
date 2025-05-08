@@ -14,26 +14,7 @@ Our mini-tokio runtime implements cooperative scheduling through the following k
 
 Here's a sequence diagram showing how these components interact:
 
-<img src="data:image/svg+xml;utf8,<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
-  <rect x="50" y="50" width="100" height="300" fill="#f0f0f0" stroke="#000"/>
-  <text x="75" y="30" text-anchor="middle">Task</text>
-  <rect x="250" y="50" width="100" height="300" fill="#f0f0f0" stroke="#000"/>
-  <text x="275" y="30" text-anchor="middle">Executor</text>
-  <rect x="450" y="50" width="100" height="300" fill="#f0f0f0" stroke="#000"/>
-  <text x="475" y="30" text-anchor="middle">Waker</text>
-
-  <line x1="150" y1="100" x2="250" y2="100" stroke="#000"/>
-  <text x="200" y="90" text-anchor="middle">poll()</text>
-
-  <line x1="250" y1="150" x2="150" y2="150" stroke="#000"/>
-  <text x="200" y="140" text-anchor="middle">Poll::Pending</text>
-
-  <line x1="150" y1="200" x2="450" y2="200" stroke="#000"/>
-  <text x="300" y="190" text-anchor="middle">register waker</text>
-
-  <line x1="450" y1="250" x2="250" y2="250" stroke="#000"/>
-  <text x="350" y="240" text-anchor="middle">wake()</text>
-</svg>" />
+<img src="data:image/svg+xml;utf8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Crect%20x%3D%2250%22%20y%3D%2250%22%20width%3D%22100%22%20height%3D%22300%22%20fill%3D%22%23f0f0f0%22%20stroke%3D%22%23000%22/%3E%3Ctext%20x%3D%2275%22%20y%3D%2230%22%20text-anchor%3D%22middle%22%3ETask%3C/text%3E%3Crect%20x%3D%22250%22%20y%3D%2250%22%20width%3D%22100%22%20height%3D%22300%22%20fill%3D%22%23f0f0f0%22%20stroke%3D%22%23000%22/%3E%3Ctext%20x%3D%22275%22%20y%3D%2230%22%20text-anchor%3D%22middle%22%3EExecutor%3C/text%3E%3Crect%20x%3D%22450%22%20y%3D%2250%22%20width%3D%22100%22%20height%3D%22300%22%20fill%3D%22%23f0f0f0%22%20stroke%3D%22%23000%22/%3E%3Ctext%20x%3D%22475%22%20y%3D%2230%22%20text-anchor%3D%22middle%22%3EWaker%3C/text%3E%3Cline%20x1%3D%22150%22%20y1%3D%22100%22%20x2%3D%22250%22%20y2%3D%22100%22%20stroke%3D%22%23000%22/%3E%3Ctext%20x%3D%22200%22%20y%3D%2290%22%20text-anchor%3D%22middle%22%3Epoll()%3C/text%3E%3Cline%20x1%3D%22250%22%20y1%3D%22150%22%20x2%3D%22150%22%20y2%3D%22150%22%20stroke%3D%22%23000%22/%3E%3Ctext%20x%3D%22200%22%20y%3D%22140%22%20text-anchor%3D%22middle%22%3EPoll%3A%3APending%3C/text%3E%3Cline%20x1%3D%22150%22%20y1%3D%22200%22%20x2%3D%22450%22%20y2%3D%22200%22%20stroke%3D%22%23000%22/%3E%3Ctext%20x%3D%22300%22%20y%3D%22190%22%20text-anchor%3D%22middle%22%3Eregister%20waker%3C/text%3E%3Cline%20x1%3D%22450%22%20y1%3D%22250%22%20x2%3D%22250%22%20y2%3D%22250%22%20stroke%3D%22%23000%22/%3E%3Ctext%20x%3D%22350%22%20y%3D%22240%22%20text-anchor%3D%22middle%22%3Ewake()%3C/text%3E%3C/svg%3E" />
 
 ## Pin Explained
 
@@ -41,24 +22,7 @@ Here's a sequence diagram showing how these components interact:
 
 Here's a diagram showing how `Pin` works:
 
-<img src="data:image/svg+xml;utf8,<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
-  <rect x="50" y="50" width="200" height="100" fill="#e0e0ff" stroke="#000"/>
-  <text x="150" y="100" text-anchor="middle">Stack</text>
-  <rect x="50" y="200" width="200" height="100" fill="#ffe0e0" stroke="#000"/>
-  <text x="150" y="250" text-anchor="middle">Heap</text>
-
-  <line x1="150" y1="150" x2="150" y2="200" stroke="#000" marker-end="url(#arrow)"/>
-  <text x="170" y="175" text-anchor="start">Pin&lt;Box&lt;Future&gt;&gt;</text>
-
-  <rect x="300" y="50" width="200" height="100" fill="#e0e0ff" stroke="#000"/>
-  <text x="400" y="100" text-anchor="middle">Stack</text>
-  <rect x="300" y="200" width="200" height="100" fill="#ffe0e0" stroke="#000"/>
-  <text x="400" y="250" text-anchor="middle">Heap</text>
-
-  <line x1="400" y1="150" x2="400" y2="200" stroke="#000" marker-end="url(#arrow)"/>
-  <text x="420" y="175" text-anchor="start">Box&lt;Future&gt;</text>
-  <text x="420" y="195" text-anchor="start">(can move)</text>
-</svg>" />
+<img src="data:image/svg+xml;utf8,%3Csvg%20width%3D%22600%22%20height%3D%22400%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Crect%20x%3D%2250%22%20y%3D%2250%22%20width%3D%22200%22%20height%3D%22100%22%20fill%3D%22%23e0e0ff%22%20stroke%3D%22%23000%22/%3E%3Ctext%20x%3D%22150%22%20y%3D%22100%22%20text-anchor%3D%22middle%22%3EStack%3C/text%3E%3Crect%20x%3D%2250%22%20y%3D%22200%22%20width%3D%22200%22%20height%3D%22100%22%20fill%3D%22%23ffe0e0%22%20stroke%3D%22%23000%22/%3E%3Ctext%20x%3D%22150%22%20y%3D%22250%22%20text-anchor%3D%22middle%22%3EHeap%3C/text%3E%3Cline%20x1%3D%22150%22%20y1%3D%22150%22%20x2%3D%22150%22%20y2%3D%22200%22%20stroke%3D%22%23000%22%20marker-end%3D%22url(%23arrow)%22/%3E%3Ctext%20x%3D%22170%22%20y%3D%22175%22%20text-anchor%3D%22start%22%3EPin%3C%3CBox%3CFuture%3E%3E%3C/text%3E%3Crect%20x%3D%22300%22%20y%3D%2250%22%20width%3D%22200%22%20height%3D%22100%22%20fill%3D%22%23e0e0ff%22%20stroke%3D%22%23000%22/%3E%3Ctext%20x%3D%22400%22%20y%3D%22100%22%20text-anchor%3D%22middle%22%3EStack%3C/text%3E%3Crect%20x%3D%22300%22%20y%3D%22200%22%20width%3D%22200%22%20height%3D%22100%22%20fill%3D%22%23ffe0e0%22%20stroke%3D%22%23000%22/%3E%3Ctext%20x%3D%22400%22%20y%3D%22250%22%20text-anchor%3D%22middle%22%3EHeap%3C/text%3E%3Cline%20x1%3D%22400%22%20y1%3D%22150%22%20x2%3D%22400%22%20y2%3D%22200%22%20stroke%3D%22%23000%22%20marker-end%3D%22url(%23arrow)%22/%3E%3Ctext%20x%3D%22420%22%20y%3D%22175%22%20text-anchor%3D%22start%22%3EBox%3CFuture%3E%3C/text%3E%3Ctext%20x%3D%22420%22%20y%3D%22195%22%20text-anchor%3D%22start%22%3E(can%20move)%3C/text%3E%3C/svg%3E" />
 
 ## Poll Contract and Waker Callbacks
 
