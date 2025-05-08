@@ -1,0 +1,20 @@
+[workspace]
+members = [
+    "mini_tokio",
+    "toy_tests",
+    "benches"
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/yourusername/mini-tokio"
+description = "A minimal async runtime implementation for educational purposes"
+
+[workspace.dependencies]
+futures = "0.3"
+crossbeam = "0.8"
+criterion = "0.5"
+tokio = { version = "1.36", features = ["rt", "macros", "time"] }

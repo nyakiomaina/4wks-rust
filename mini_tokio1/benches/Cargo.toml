@@ -1,0 +1,20 @@
+[package]
+name = "benches"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description.workspace = true
+
+[dependencies]
+mini_tokio = { path = "../mini_tokio" }
+tokio = { workspace = true, features = ["rt", "macros", "time"] }
+criterion = { workspace = true }
+crossbeam = "0.8"
+
+
+[[bench]]
+name = "latency"
+harness = false
+path = "src/latency.rs"

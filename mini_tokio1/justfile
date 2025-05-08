@@ -1,0 +1,23 @@
+# List all available commands
+default:
+    @just --list
+
+# Run all tests
+test:
+    cargo test --all
+
+# Run benchmarks
+bench:
+    cargo bench
+
+# Generate documentation
+docs:
+    cargo doc --no-deps --document-private-items
+
+# Format all code
+fmt:
+    cargo fmt --all
+
+# Run clippy
+clippy:
+    cargo clippy --all-targets --all-features -- -D warnings
