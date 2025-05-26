@@ -1,0 +1,26 @@
+<svg height="600" viewBox="0 0 800 600" width="800" xmlns="http://www.w3.org/2000/svg">
+<circle cx="300" cy="50" fill="white" r="20" stroke="black" stroke-width="2"/>
+<text font-size="14" text-anchor="middle" x="300" y="55">
+5
+</text>
+<line stroke="black" stroke-width="2" x1="300" x2="260" y1="70" y2="90"/>
+<circle cx="260" cy="110" fill="white" r="20" stroke="black" stroke-width="2"/>
+<text font-size="14" text-anchor="middle" x="260" y="115">
+3
+</text>
+<line stroke="black" stroke-width="2" x1="260" x2="220" y1="130" y2="150"/>
+<circle cx="220" cy="170" fill="white" r="20" stroke="black" stroke-width="2"/>
+<text font-size="14" text-anchor="middle" x="220" y="175">
+1
+</text>
+<line stroke="black" stroke-width="2" x1="300" x2="340" y1="70" y2="90"/>
+<circle cx="340" cy="110" fill="white" r="20" stroke="black" stroke-width="2"/>
+<text font-size="14" text-anchor="middle" x="340" y="115">
+7
+</text>
+<line stroke="black" stroke-width="2" x1="340" x2="380" y1="130" y2="150"/>
+<circle cx="380" cy="170" fill="white" r="20" stroke="black" stroke-width="2"/>
+<text font-size="14" text-anchor="middle" x="380" y="175">
+9
+</text>
+</svg>

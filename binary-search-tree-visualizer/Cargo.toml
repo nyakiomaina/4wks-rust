@@ -1,0 +1,16 @@
+[package]
+name = "binary-search-tree-visualizer"
+version = "0.1.0"
+edition = "2021"
+authors = ["Nyakio Maina <carolinenyakio21@gmail.com>"]
+description = "A crate that provides visualization tools for binary search trees, including ASCII art and SVG generation. Great for educational purposes and debugging."
+license = "MIT"
+repository = "https://github.com/nyakiomaina/binary-search-tree-visualizer"
+documentation = "https://docs.rs/binary-search-tree-visualizer"
+homepage = "https://github.com/nyakiomaina/binary-search-tree-visualizer"
+keywords = ["binary-search-tree", "visualization", "ascii", "svg", "education"]
+categories = ["data-structures", "visualization", "education"]
+
+[dependencies]
+svg = "0.13.1"
+thiserror = "1.0"
